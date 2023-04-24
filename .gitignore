@@ -1,8 +1,10 @@
-HELP.md
 target/
+
 !.mvn/wrapper/maven-wrapper.jar
-!**/src/main/**/target/
-!**/src/test/**/target/
+.svn/
+**/.svn/
+.metadata/
+**/.metadata/
 
 ### STS ###
 .apt_generated
@@ -11,7 +13,6 @@ target/
 .project
 .settings
 .springBeans
-.sts4-cache
 
 ### IntelliJ IDEA ###
 .idea
@@ -20,14 +21,24 @@ target/
 *.ipr
 
 ### NetBeans ###
-/nbproject/private/
-/nbbuild/
-/dist/
-/nbdist/
-/.nb-gradle/
-build/
-!**/src/main/**/build/
-!**/src/test/**/build/
+nbproject/private/
+### build/ ###
+nbbuild/
+### dist/ ###
+nbdist/
+.nb-gradle/
+.recommenders/
+runWeb.sh
+runStatistic.sh
+xbb-dingtalk-jxc-web/interface.txt
+runStatistic.sh
+*.class
 
-### VS Code ###
-.vscode/
+### log ###
+log.txt
+log.txt.*
+*.log
+
+######### OS files ###########
+*/.DS_Store
+.DS_Store
