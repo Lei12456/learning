@@ -8,7 +8,7 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
     <groupId>com.yl</groupId>
-    <artifactId>lock</artifactId>
+    <artifactId>yl-lock</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>lock</name>
     <description>lock</description>
