@@ -1,0 +1,23 @@
+logging:
+  pattern:
+    dateformat: HH:mm:ss:SSS
+  level:
+    cn.itcast: debug
+spring:
+  rabbitmq:
+    host: 124.223.50.149 # rabbitMQ的ip地址
+    port: 15672 # 端口
+    username: root
+    password: root
+    virtual-host: /
+    listener:
+      simple:
+        acknowledge-mode: none
+        prefetch: 1
+        retry:
+          enabled: true
+          initial-interval: 1000 #初始化等待时长
+          multiplier: 1 # 下次失败等待时长的倍数
+          max-attempts: 3 #最大重试次数
+#server:
+#  port: 8080
