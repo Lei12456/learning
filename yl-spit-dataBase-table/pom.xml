@@ -31,6 +31,11 @@
         <mysql.version>5.1.40</mysql.version>
     </properties>
     <dependencies>
+        <dependency>
+            <groupId>com.yl</groupId>
+            <artifactId>yl-tool-box</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
         <!-- 添加适用于生产环境的功能，如性能指标和监测等功能 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -135,5 +140,19 @@
             </testResource>
         </testResources>
         <!-- 注：maven默认是不编译，因此加上如下resources才会生产对应的xml文件 目的：解决mybatis映射关系不对应问题  end =============== -->
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                </configuration>
+            </plugin>
+        </plugins>
     </build>
 </project>
