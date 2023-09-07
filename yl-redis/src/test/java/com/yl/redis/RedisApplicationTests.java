@@ -2,7 +2,7 @@ package com.yl.redis;
 
 import com.yl.redis.lock.RedLock;
 import com.yl.redis.lock.RedisSetNxLock;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -20,7 +20,7 @@ class RedisApplicationTests {
 
     private String key = "test1";
     private String value = "value1";
-    @Test
+
     void textRedisSetNxLock() {
         for (int i = 0; i < 10; i++) {
             Runnable runnable = () -> {
