@@ -28,6 +28,7 @@ public class User implements Serializable {
     /**
      * 员工唯一标识ID（不可修改）
      */
+    @TableField("user_id")
     private String userId;
 
     /**

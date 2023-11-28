@@ -1,8 +1,11 @@
 package com.yl;
 
+import com.yl.entity.CursorPageBaseReq;
+import com.yl.entity.CursorPageBaseResp;
 import com.yl.entity.User;
 import com.yl.mapper.UserMapper;
 import com.yl.service.UserService;
+import com.yl.utils.CursorUtils;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -26,9 +29,11 @@ public class CursorTest {
     private UserMapper userMapper;
     @Test
     public void test1(){
-        //User user = userService.getBaseMapper().selectById(1);
-        User user1 = userMapper.selectById(1);
-        System.out.println();
-        //CursorUtils.getCursorPageByMysql()
+        CursorPageBaseReq cursorPageBaseReq = new CursorPageBaseReq();
+        cursorPageBaseReq.setCursor("2");
+        cursorPageBaseReq.setPageSize(2);
+        CursorPageBaseResp<User> resp = CursorUtils.getCursorPageByMysql(userService, cursorPageBaseReq, wrapper -> {
+            wrapper.eq(User::getUserId, "1");
+        }, User::getId);
     }
 }
