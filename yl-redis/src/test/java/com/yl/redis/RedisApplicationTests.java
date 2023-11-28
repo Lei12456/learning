@@ -6,22 +6,23 @@ import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import javax.annotation.Resource;
 import java.util.concurrent.ThreadPoolExecutor;
 
 @SpringBootTest
-class RedisApplicationTests {
+public class RedisApplicationTests {
 
-    @Autowired
+    @Resource
     private RedisSetNxLock redisSetNxLock;
-    @Autowired
+    @Resource
     private ThreadPoolExecutor simpleThreadPool;
-    @Autowired
+    @Resource
     private RedLock redLock;
 
     private String key = "test1";
     private String value = "value1";
 
-    void textRedisSetNxLock() {
+    public void textRedisSetNxLock() {
         for (int i = 0; i < 10; i++) {
             Runnable runnable = () -> {
                 try {
@@ -43,7 +44,7 @@ class RedisApplicationTests {
     }
 
     @Test
-    void textRedLock() {
+    public void textRedLock() {
         try {
             redLock.lock(key,1000);
             System.out.println(Thread.currentThread().getName() + "执行");
