@@ -13,7 +13,7 @@ import java.util.Date;
 import java.util.Optional;
 import java.util.function.Consumer;
 
-public class CursorUtils {
+public class CursorSimpleUtils {
 
     public static <T> CursorPageBaseResp<T> getCursorPageByMysql(IService<T> mapper, CursorPageBaseReq request, Consumer<LambdaQueryWrapper<T>> initWrapper, SFunction<T, ?> cursorColumn) {
         Class<?> cursorType = LambdaUtils.getReturnType(cursorColumn);
@@ -26,7 +26,7 @@ public class CursorUtils {
         Page<T> page = mapper.page(request.plusPage(), wrapper);
         String cursor = Optional.ofNullable(CollectionUtil.getLast(page.getRecords()))
                 .map(cursorColumn)
-                .map(CursorUtils::toCursor)
+                .map(CursorSimpleUtils::toCursor)
                 .orElse(null);
         Boolean isLast = page.getRecords().size() != request.getPageSize();
         return new CursorPageBaseResp<>(cursor, isLast, page.getRecords());
