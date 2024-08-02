@@ -15,7 +15,7 @@ public class RedissonConfig {
         //集群模式
         //config.useClusterServers().addNodeAddress("localhost","localhost");
         //单节点配置
-        config.useSingleServer().setAddress("redis://127.0.0.1:6379");
+        config.useSingleServer().setAddress("redis://121.199.60.142:6379").setPassword("123456");
         return Redisson.create(config);
     }
 }

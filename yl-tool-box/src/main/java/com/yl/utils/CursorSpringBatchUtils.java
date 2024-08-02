@@ -1,7 +1,6 @@
 package com.yl.utils;
 
 import com.baomidou.mybatisplus.core.config.GlobalConfig;
-import com.yl.mapper.UserMapper;
 import org.springframework.batch.item.database.JdbcCursorItemReader;
 
 import java.util.Map;
@@ -9,8 +8,8 @@ import java.util.Map;
 public class CursorSpringBatchUtils {
 
 
-    public <A extends UserMapper, V> long cursorSelectCanStopNoSqlBuilder(Map<String, Object> param, Class<V> voClass, Class<A> daoClass,
-                                                                             String queryId, boolean lastCallBack) {
+    public <A extends com.baomidou.mybatisplus.core.mapper.BaseMapper<com.yl.entity.User>, V> long cursorSelectCanStopNoSqlBuilder(Map<String, Object> param, Class<V> voClass, Class<A> daoClass,
+                                                                                                                                   String queryId, boolean lastCallBack) {
 
         JdbcCursorItemReader reader = new JdbcCursorItemReader();
         long count = 0;

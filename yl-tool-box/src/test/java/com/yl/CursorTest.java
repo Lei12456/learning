@@ -3,8 +3,6 @@ package com.yl;
 import com.yl.entity.CursorPageBaseReq;
 import com.yl.entity.CursorPageBaseResp;
 import com.yl.entity.User;
-import com.yl.mapper.UserMapper;
-import com.yl.service.UserService;
 import com.yl.utils.CursorSimpleUtils;
 import org.junit.Test;
 import org.junit.runner.RunWith;
