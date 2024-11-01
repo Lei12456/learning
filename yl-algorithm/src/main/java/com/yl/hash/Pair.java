@@ -1,4 +1,4 @@
-package com.yl.ylalgorithm.hash;
+package com.yl.hash;
 
 class Pair {
     public int key;

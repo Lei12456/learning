@@ -1,4 +1,4 @@
-package com.yl.ylalgorithm.hash;
+package com.yl.hash;
 
 import java.util.ArrayList;
 import java.util.List;
