@@ -1,0 +1,11 @@
+server:
+  port: 8321
+spring:
+  ai:
+    openai:
+      api-key: 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
+      base-url: https://api.openai.com
+    chat:
+      options:
+        model: gpt-3.5-turbo
+        temperature: 0.7
