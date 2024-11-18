@@ -23,5 +23,4 @@ public class TestController {
         return aiClient.generate(message);
     }
 
-
 }

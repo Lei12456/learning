@@ -1,5 +1,5 @@
 server:
-  port: 8321
+  port: 8322
 spring:
   ai:
     openai:
@@ -9,3 +9,24 @@ spring:
       options:
         model: gpt-3.5-turbo
         temperature: 0.7
+#  #============ 禁用Jackson的科学计数法的序列化与反序列化=========#
+#  jackson:
+#    deserialization:
+#      USE_BIG_DECIMAL_FOR_FLOATS : true
+#    serialization:
+#      WRITE_BIGDECIMAL_AS_PLAIN : true  #============ 数据源配置 ==========#
+#  datasource:
+#    driver-class-name: com.mysql.jdbc.Driver
+#    druid:
+#      initial-size: 10
+#      max-active: 50
+#      max-wait: 60000
+#      min-evictable-idle-time-millis: 300000
+#      min-idle: 10
+#      test-on-borrow: false
+#      test-on-return: false
+#      test-while-idle: true
+#      time-between-eviction-runs-millis: 60000
+#    password: root
+#    url: jdbc:mysql://121.199.60.142:3306/yl_test_db?useUnicode=true&characterEncoding=utf-8&autoReconnect=true&failOverReadOnly=false&allowMultiQueries=true&useSSL=false&useAffectedRows=true
+#    username: root
