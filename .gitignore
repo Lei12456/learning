@@ -5,14 +5,8 @@ target/
 **/.svn/
 .metadata/
 **/.metadata/
+**/.mvn
 
-### STS ###
-.apt_generated
-.classpath
-.factorypath
-.project
-.settings
-.springBeans
 
 ### IntelliJ IDEA ###
 .idea
@@ -28,11 +22,6 @@ nbbuild/
 nbdist/
 .nb-gradle/
 .recommenders/
-runWeb.sh
-runStatistic.sh
-xbb-dingtalk-jxc-web/interface.txt
-runStatistic.sh
-*.class
 
 ### log ###
 log.txt

@@ -2,11 +2,10 @@ package com.yl.redis;
 
 import com.yl.redis.lock.RedLock;
 import com.yl.redis.lock.RedisSetNxLock;
+import jakarta.annotation.Resource;
 import org.junit.Test;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import javax.annotation.Resource;
 import java.util.concurrent.ThreadPoolExecutor;
 
 @SpringBootTest

@@ -1,34 +1,44 @@
 package com.yl.lock.threadlocal;
 
-import com.google.common.collect.Lists;
-import org.checkerframework.checker.units.qual.K;
-
-import java.util.BitSet;
-import java.util.List;
-
 public class ThreadLocalTest {
-    private List<String> messages = Lists.newArrayList();
+    ThreadLocal<Long> longLocal = new ThreadLocal<Long>();
+    ThreadLocal<String> stringLocal = new ThreadLocal<String>();
 
-    public static final ThreadLocal<ThreadLocalTest> holder = ThreadLocal.withInitial(ThreadLocalTest::new);
-
-    public static void add(String message) {
-        holder.get().messages.add(message);
+    public void set() {
+        longLocal.set(1L);
+        stringLocal.set(Thread.currentThread().getName());
     }
 
-    public static List<String> clear() {
-        List<String> messages = holder.get().messages;
-        holder.remove();
-        BitSet bitSet = new BitSet();
-        bitSet.set(1);
-        System.out.println("size: " + holder.get().messages.size());
-        return messages;
+    public long getLong() {
+        return longLocal.get();
     }
 
-    public static void main(String[] args) {
-        ThreadLocalTest.add("一枝花算不算浪漫");
-        List<String> messages = ThreadLocalTest.clear();
-        String s = messages.get(0);
-        System.out.println(holder.get().messages);
-        ThreadLocalTest.clear();
+    public String getString() {
+        return stringLocal.get();
+    }
+
+    public static void main(String[] args) throws InterruptedException {
+        final ThreadLocalTest test = new ThreadLocalTest();
+
+        test.set();     // 初始化ThreadLocal
+        for (int i = 0; i < 10; i++) {
+            System.out.println(test.getString() + " : " + test.getLong() + i);
+        }
+
+        Thread thread1 = new Thread(() -> {
+            test.set();
+            for (int i = 0; i < 10; i++) {
+                System.out.println(test.getString() + " : " + test.getLong() + i);
+            }
+        });
+        thread1.start();
+
+        Thread thread2 = new Thread(() -> {
+            test.set();
+            for (int i = 0; i < 10; i++) {
+                System.out.println(test.getString() + " : " + test.getLong() + i);
+            }
+        });
+        thread2.start();
     }
 }
