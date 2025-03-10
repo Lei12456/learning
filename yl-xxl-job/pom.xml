@@ -9,8 +9,6 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
     <properties>
-        <maven.compiler.source>17</maven.compiler.source>
-        <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <springfox.version>2.9.2</springfox.version>
     </properties>
@@ -34,8 +32,6 @@
             <artifactId>springfox-swagger-ui</artifactId>
             <version>${springfox.version}</version>
         </dependency>
-
-
     </dependencies>
 
 

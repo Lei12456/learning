@@ -18,27 +18,16 @@ public class ThreadLocalTest {
     }
 
     public static void main(String[] args) throws InterruptedException {
-        final ThreadLocalTest test = new ThreadLocalTest();
+        new ThreadLocalTest().parentChildThread();
+    }
 
-        test.set();     // 初始化ThreadLocal
-        for (int i = 0; i < 10; i++) {
-            System.out.println(test.getString() + " : " + test.getLong() + i);
-        }
+    public void parentChildThread(){
+        stringLocal.set("Shared Data");
 
-        Thread thread1 = new Thread(() -> {
-            test.set();
-            for (int i = 0; i < 10; i++) {
-                System.out.println(test.getString() + " : " + test.getLong() + i);
-            }
-        });
-        thread1.start();
+        //子线程
+        new Thread(() -> {
+            System.out.println("Child Thread:"+ stringLocal.get());
+        }).start();
 
-        Thread thread2 = new Thread(() -> {
-            test.set();
-            for (int i = 0; i < 10; i++) {
-                System.out.println(test.getString() + " : " + test.getLong() + i);
-            }
-        });
-        thread2.start();
     }
 }

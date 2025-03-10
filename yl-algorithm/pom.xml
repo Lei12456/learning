@@ -14,7 +14,6 @@
 	<name>yl-algorithm</name>
 	<description>yl-algorithm</description>
 	<properties>
-		<java.version>17</java.version>
 	</properties>
 	<dependencies>
 		<dependency>
