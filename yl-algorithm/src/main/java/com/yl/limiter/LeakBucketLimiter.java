@@ -107,10 +107,9 @@ public class LeakBucketLimiter {
         float time = (System.currentTimeMillis() - start) / 1000F;
         //输出统计结果
 
-        log.info("限制的次数为：" + limited.get() +
-                ",通过的次数为：" + (threads * turns - limited.get()));
-        log.info("限制的比例为：" + (float) limited.get() / (float) (threads * turns));
-        log.info("运行的时长为：" + time);
+        log.info("限制的次数为：{},通过的次数为：{}", limited.get(), threads * turns - limited.get());
+        log.info("限制的比例为：{}", (float) limited.get() / (float) (threads * turns));
+        log.info("运行的时长为：{}", time);
     }
 }
 

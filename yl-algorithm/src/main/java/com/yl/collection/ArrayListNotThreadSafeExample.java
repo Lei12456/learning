@@ -41,5 +41,14 @@ public class ArrayListNotThreadSafeExample {
         if (actualSize != expectedSize) {
             System.out.println("ArrayList is not thread-safe.");
         }
+
+        new ArrayListNotThreadSafeExample().getList();
+    }
+
+    public static void getList() {
+        int[] hash = new int[26];
+
+        int i = hash['y' - 'a'];
+        System.out.printf(String.valueOf(i));
     }
 }

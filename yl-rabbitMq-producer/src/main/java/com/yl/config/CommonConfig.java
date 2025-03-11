@@ -15,10 +15,6 @@ public class CommonConfig implements ApplicationContextAware {
     public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
         //获取RabbitTemplate
         RabbitTemplate rabbitTemplate = applicationContext.getBean(RabbitTemplate.class);
-        //设置ReturnCallBack
-        rabbitTemplate.setReturnCallback((message, replyCode, replyText, exchange, routingKey) -> {
-            //log.error("消息发送到队列失败,响应码：{},失败原因：{},交换机：{}，routingKey:{},消息：{}"
-            //        ,replyCode, replyText, exchange, routingKey,message);
-        });
+
     }
 }

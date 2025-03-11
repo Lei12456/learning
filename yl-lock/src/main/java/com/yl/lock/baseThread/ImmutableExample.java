@@ -13,7 +13,7 @@ public class ImmutableExample {
 
     public static void main(String[] args) {
         //获取一个不可变的集合
-        Map<String, Integer> unmodifiableMap = Map.of();
+        Map<String, Integer> unmodifiableMap = new java.util.HashMap<>(Map.of());
         unmodifiableMap.put("a",123);
     }
 }

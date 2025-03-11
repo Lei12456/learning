@@ -7,7 +7,6 @@
         <artifactId>learning</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
-    <groupId>com.yl</groupId>
     <artifactId>yl-lock</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>lock</name>
@@ -16,16 +15,6 @@
     </properties>
     <dependencies>
         <dependency>
-            <groupId>com.yl</groupId>
-            <artifactId>yl-tool-box</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-autoconfigure</artifactId>
-            <version>2.6.7</version>
-        </dependency>
-        <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter</artifactId>
             <scope>test</scope>
@@ -33,7 +22,7 @@
         <dependency>
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
-            <version>30.1.1-jre</version>
+            <version>32.0.1-android</version>
         </dependency>
     </dependencies>
 
