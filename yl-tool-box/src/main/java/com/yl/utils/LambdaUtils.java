@@ -17,4 +17,9 @@ public class LambdaUtils {
         field.setAccessible(true);
         return field.getType();
     }
+
+    public static void main(String[] args) {
+
+
+    }
 }
