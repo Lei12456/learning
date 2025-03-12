@@ -18,7 +18,7 @@
         <module>yl-algorithm</module>
         <module>yl-design-pattern</module>
         <module>yl-jvm</module>
-        <module>yl-lock</module>
+        <module>yl-juc</module>
         <module>yl-rabbitMq-consumer</module>
         <module>yl-rabbitMq-producer</module>
         <module>yl-redis</module>

@@ -7,7 +7,7 @@
         <artifactId>learning</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
-    <artifactId>yl-lock</artifactId>
+    <artifactId>yl-juc</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>lock</name>
     <description>lock</description>
