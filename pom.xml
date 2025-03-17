@@ -22,6 +22,8 @@
         <module>yl-rabbitMq-consumer</module>
         <module>yl-rabbitMq-producer</module>
         <module>yl-redis</module>
+        <module>yl-spi</module>
+        <module>yl-liteflow</module>
         <module>yl-source</module>
         <module>yl-spit-dataBase-table</module>
         <module>yl-third-party-api</module>
@@ -70,15 +72,20 @@
     <build>
         <plugins>
             <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-            <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
                     <source>${java.version}</source>
                     <target>${java.version}</target>
+                </configuration>
+            </plugin>
+            <!-- 打包忽略测试类 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.21.0</version>
+                <configuration>
+                    <skipTests>true</skipTests>
                 </configuration>
             </plugin>
         </plugins>

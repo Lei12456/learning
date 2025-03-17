@@ -9,8 +9,8 @@
     </parent>
     <artifactId>yl-spring-framework</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>yl-spring-aop</name>
-    <description>yl-spring-aop</description>
+    <name>yl-spring-framework</name>
+    <description>yl-spring-framework</description>
 
     <properties>
     </properties>
@@ -28,6 +28,12 @@
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
+            <version>6.0.13</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-beans</artifactId>
+            <version>6.0.13</version> <!-- 修改为有效版本 -->
         </dependency>
         <dependency>
             <groupId>org.aspectj</groupId>
