@@ -1,15 +1,15 @@
 package com.yl.redis.lua;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 
-import javax.annotation.Resource;
 import java.util.concurrent.TimeUnit;
 
 @Service
 public class RateLimiterService {
 
-    @Resource
+    @Autowired
     private RedisTemplate<String, Object> redisTemplate;
 
     /**
@@ -56,25 +56,5 @@ public class RateLimiterService {
         }
 
         return allowed;
-    }
-
-    public static void main(String[] args) {
-        RateLimiterService rateLimiterService = new RateLimiterService();
-        // 定义 Redis 键名
-        String userId = "YL";
-        String tokensKey = "rate_limiter:tokens:" + userId;
-        String timestampKey = "rate_limiter:timestamp:" + userId;
-
-        // 定义限流参数
-        double rate = 1.0; // 每秒生成 1 个令牌
-        long capacity = 10; // 令牌桶容量为 10
-        long now = System.currentTimeMillis() / 1000; // 当前时间戳（秒）
-        int requested = 100; // 本次请求需要 1 个令牌
-
-        // 判断是否允许请求
-        boolean allowed = rateLimiterService.allowRequest(tokensKey, timestampKey, rate, capacity, now, requested);
-        if (allowed) {
-
-        }
     }
 }

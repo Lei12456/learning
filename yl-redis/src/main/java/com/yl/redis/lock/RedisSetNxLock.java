@@ -1,7 +1,6 @@
 package com.yl.redis.lock;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Component;
 
@@ -12,7 +11,7 @@ import java.util.concurrent.TimeUnit;
 public class RedisSetNxLock {
 
     @Autowired
-    private StringRedisTemplate redisTemplate;
+    private StringRedisTemplate stringRedisTemplate;
 
     /**
      * @description 加锁
@@ -24,7 +23,7 @@ public class RedisSetNxLock {
      * @return boolean
      */
     public boolean lock(String key,String value,long expireTime){
-        Boolean result = redisTemplate.opsForValue().setIfAbsent(key, value, expireTime, TimeUnit.MILLISECONDS);
+        Boolean result = stringRedisTemplate.opsForValue().setIfAbsent(key, value, expireTime, TimeUnit.MILLISECONDS);
         return result != null && result;
     }
     /**
@@ -36,9 +35,9 @@ public class RedisSetNxLock {
      * @return boolean
      */
     public boolean unlock(String key,String value){
-        if (Objects.equals(value,redisTemplate.opsForValue().get(key))){
+        if (Objects.equals(value,stringRedisTemplate.opsForValue().get(key))){
             //解锁
-            return redisTemplate.delete(key);
+            return stringRedisTemplate.delete(key);
         }
         return false;
     }
