@@ -2,7 +2,7 @@
 spring:
   redis:
     host: ${yl.redis.host}
-    port: 6379
+    port: ${yl.redis.port}
     password: ${yl.redis.password}
     jedis:
       pool:

@@ -7,7 +7,6 @@
         <artifactId>learning</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
-    <groupId>com.yl</groupId>
     <artifactId>yl-source</artifactId>
     <name>source</name>
     <description>source</description>

@@ -7,7 +7,6 @@
         <artifactId>learning</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
-    <groupId>com.yl</groupId>
     <artifactId>yl-redis</artifactId>
     <name>redis</name>
     <description>yl-redis</description>
@@ -77,6 +76,11 @@
             <groupId>redis.clients</groupId>
             <artifactId>jedis</artifactId>
             <version>4.0.1</version> <!-- 请根据需要选择合适的版本 -->
+        </dependency>
+        <dependency>
+            <groupId>javax.annotation</groupId>
+            <artifactId>javax.annotation-api</artifactId>
+            <version>1.3.2</version>
         </dependency>
     </dependencies>
 
