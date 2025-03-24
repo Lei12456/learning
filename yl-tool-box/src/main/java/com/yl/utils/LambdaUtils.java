@@ -3,8 +3,10 @@ package com.yl.utils;
 import com.baomidou.mybatisplus.core.toolkit.support.SFunction;
 import lombok.SneakyThrows;
 import org.apache.ibatis.reflection.property.PropertyNamer;
+import org.springframework.boot.context.properties.ConfigurationProperties;
 
 import java.lang.reflect.Field;
+
 
 public class LambdaUtils {
 
