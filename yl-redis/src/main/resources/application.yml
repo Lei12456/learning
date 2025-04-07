@@ -54,3 +54,12 @@ logging:
     password: ${yl.mysql.password}
     url: jdbc:mysql://${yl.mysql.host}:${yl.mysql.port}/${yl.mysql.db}?useUnicode=true&characterEncoding=utf-8&autoReconnect=true&failOverReadOnly=false&allowMultiQueries=true&useSSL=false&useAffectedRows=true
     username: ${yl.mysql.username}
+
+
+canal:
+  server:
+    host: 121.199.60.142
+    port: 11111
+  destination: example
+  username: root
+  password: root
