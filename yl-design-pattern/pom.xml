@@ -7,7 +7,6 @@
         <artifactId>learning</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
-    <groupId>com.yl</groupId>
     <artifactId>yl-design-pattern</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>design-pattern</name>

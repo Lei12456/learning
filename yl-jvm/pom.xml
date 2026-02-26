@@ -7,7 +7,6 @@
         <artifactId>learning</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
-    <groupId>com.yl</groupId>
     <artifactId>yl-jvm</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>jvm</name>

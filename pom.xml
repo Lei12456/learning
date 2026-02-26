@@ -15,6 +15,7 @@
     <name>learning</name>
     <description>learning</description>
     <modules>
+        <module>yl-ai-code</module>
         <module>yl-algorithm</module>
         <module>yl-design-pattern</module>
         <module>yl-jvm</module>
@@ -41,6 +42,16 @@
         <fastjson.version>1.2.73</fastjson.version>
         <hutool-all.version>5.3.8</hutool-all.version>
     </properties>
+    <dependencyManagement>
+        <dependencies>
+            <!-- druid 连接池 -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid-spring-boot-3-starter</artifactId>
+                <version>1.2.20</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -51,12 +62,6 @@
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <scope>test</scope>
-        </dependency>
-        <!-- druid 连接池 -->
-        <dependency>
-            <groupId>com.alibaba</groupId>
-            <artifactId>druid-spring-boot-starter</artifactId>
-            <version>1.1.16</version>
         </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
