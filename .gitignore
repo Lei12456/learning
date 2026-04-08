@@ -2,6 +2,7 @@ target/
 
 !.mvn/wrapper/maven-wrapper.jar
 .svn/
+.github
 **/.svn/
 .metadata/
 **/.metadata/
